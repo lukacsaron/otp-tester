@@ -1,0 +1,193 @@
+/* static/styles.css */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* CSS Variables for Theme Colors */
+:root {
+    --telegram-blue: #0088cc;
+    --dark-bg: #1c1c1c;
+    --dark-container-bg: #2c2c2c;
+    --light-bg: #e5ddd5;
+    --container-bg: #ffffff;
+    --label-color: #555555;
+    --input-border: #cccccc;
+    --error-color: #ff4d4f;
+    --text-color: #333333;
+    --link-color: #0088cc;
+}
+
+/* Body Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--light-bg); /* Telegram's light background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Container Styles */
+.container {
+    background-color: var(--container-bg);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+/* Title Styles */
+.title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--telegram-blue);
+    margin-bottom: 30px;
+}
+
+/* Form Group Styles */
+.form-group {
+    margin-bottom: 22px;
+}
+
+/* Label Styles */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: var(--label-color);
+    font-size: 16px;
+}
+
+/* Input Styles */
+input[type="text"] {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid var(--input-border);
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Input Focus Styles */
+input[type="text"]:focus {
+    border-color: var(--telegram-blue);
+    box-shadow: 0 0 5px rgba(0, 136, 204, 0.5);
+}
+
+/* Submit Button Styles */
+input[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--telegram-blue);
+    border: none;
+    border-radius: 25px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-sizing: border-box;
+}
+
+/* Submit Button Hover Effects */
+input[type="submit"]:hover {
+    background-color: #006f99;
+    transform: translateY(-2px);
+}
+
+/* Response Message Styles */
+.response-message {
+    text-align: center;
+    font-size: 18px;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+/* Error Message Styles */
+.error-message {
+    text-align: center;
+    font-size: 16px;
+    color: var(--error-color);
+    margin-bottom: 20px;
+}
+
+/* Back Link Styles */
+a.back-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+a.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+    }
+    .title {
+        font-size: 22px;
+    }
+    label {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+    input[type="text"] {
+        font-size: 15px;
+        padding: 12px 16px;
+    }
+    input[type="submit"] {
+        font-size: 15px;
+        padding: 12px;
+    }
+    .response-message, .error-message {
+        font-size: 16px;
+    }
+    a.back-link {
+        font-size: 15px;
+    }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--dark-bg);
+    }
+    .container {
+        background-color: var(--dark-container-bg);
+        box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1);
+    }
+    .title {
+        color: var(--telegram-blue);
+    }
+    label {
+        color: #dddddd;
+    }
+    input[type="text"] {
+        background-color: #3c3c3c;
+        border: 1px solid #555555;
+        color: #ffffff;
+    }
+    input[type="submit"] {
+        background-color: var(--telegram-blue);
+    }
+    .response-message, .error-message {
+        color: #ffffff;
+    }
+    a.back-link {
+        color: var(--link-color);
+    }
+}

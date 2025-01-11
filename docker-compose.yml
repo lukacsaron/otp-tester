@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  telegram-metatrader:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000" # Map Flask port
+    environment:
+      ENVIRONMENT: ""
+    volumes:
+        #- ./teletrade_parser_session.session:/app/teletrade_parser_session.session
+    restart: unless-stopped
+    command: >
+      sh -c "python html_test_app.py"
+      
